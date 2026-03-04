@@ -26,7 +26,7 @@ namespace blaze {
     }
 }
 
-#define s_listen(id, name) listenForSettingChanges(id, +[](bool _v) { blaze::settings().name = _v; })
+#define s_listen(id, name) listenForSettingChanges<bool>(id, +[](bool _v) { blaze::settings().name = _v; })
 
 $execute {
     s_listen("image-cache", imageCache);
